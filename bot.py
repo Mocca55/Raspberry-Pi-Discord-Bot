@@ -66,32 +66,6 @@ async def bf(ctx):
     print(str(now) + "     Wechsel auf -> spielt BF2")
     datei.write("\r\n" + str(now) + "     Wechsel auf -> spielt BF2")
     datei.close()
-
-@client.command() 
-async def friday(ctx):
-    await ctx.send('Friday da möchte jemand spielen..... GameON')
-    now = datetime.datetime.now()
-    datei = open('bot-log.txt','a')
-    print(str(now) + "     Command -> friday")
-    datei.write("\r\n" + str(now) + "     Command -> friday")
-    datei.close()
-@client.command() 
-async def passstift(ctx):
-    await ctx.send('Adrian da möchte jemand spielen..... GameON')
-    now = datetime.datetime.now()
-    datei = open('bot-log.txt','a')
-    print(str(now) + "     Command -> Passstift")
-    datei.write("\r\n" + str(now) + "     Command -> Passstift")
-    datei.close()
-
-@client.command() 
-async def mocca55(ctx):
-    await ctx.send('Michael da möchte jemand spielen..... GameON')
-    now = datetime.datetime.now()
-    datei = open('bot-log.txt','a')
-    print(str(now) + "     Command -> Mocca55")
-    datei.write("\r\n" + str(now) + "     Command -> Mocca55")
-    datei.close()
     
 @client.command() 
 async def minecraft(ctx):
