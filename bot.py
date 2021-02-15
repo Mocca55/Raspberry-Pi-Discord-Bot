@@ -75,15 +75,6 @@ async def minecraft(ctx):
     print(str(now) + "     Mincraft Server Abfrage")
     datei.write("\r\n" + str(now) + "     Mincraft Server Abfrage")
     datei.close()
-
-#@client.command()
-#@commands.is_owner()
-#async def shutdown(ctx):
- #   await ctx.bot.logout()
-  #  now = datetime.datetime.now()
-   # datei = open('bot-log.txt','a')
-    #datei.write("\r\n" + str(now) + "     Bot beendet")
-    #datei.close()
     
 import os
 @client.command() 
