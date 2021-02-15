@@ -28,7 +28,7 @@ async def on_ready():
     print('Connected to bot: {}'.format(client.user.name))
     print('Bot ID: {}'.format(client.user.id))
 
-
+#Bot Commands
 @client.command() 
 async def netflix(ctx):
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Netflix'))
@@ -76,7 +76,6 @@ async def minecraft(ctx):
     datei.write("\r\n" + str(now) + "     Mincraft Server Abfrage")
     datei.close()
     
-import os
 @client.command() 
 async def temp(ctx):
         tempData = "/sys/class/thermal/thermal_zone0/temp"
