@@ -69,7 +69,7 @@ async def bf(ctx):
     
 @client.command() 
 async def minecraft(ctx):
-    await ctx.send('GameON Minecraft Server XX.XX.XXX.XXX')
+    await ctx.send('Minecraft Server XX.XX.XXX.XXX')
     now = datetime.datetime.now()
     datei = open('bot-log.txt','a')
     print(str(now) + "     Mincraft Server Abfrage")
@@ -84,8 +84,8 @@ async def temp(ctx):
     dateilesen.close()
     now = datetime.datetime.now()
     datei = open('bot-log.txt','a')
-    print(str(now) + "     Deine CPU hat " + temperatur + " Grad")
-    datei.write("\r\n" + str(now) + "     Deine CPU hat " + temperatur + " Grad")
+    print(str(now) + "     Meine CPU hat " + temperatur + " Grad")
+    datei.write("\r\n" + str(now) + "     Meine CPU hat " + temperatur + " Grad")
     await ctx.send("Meine CPU Temperatur ist gerade " +  temperatur +  " Grad.")
     datei.close()
 
@@ -114,4 +114,17 @@ async def serverbackup(ctx):
     await ctx.send("Server Backup wurde auf dem USB-Stick erstellt.")
     datei.close()
 
+@client.command() 
+async def uptime(ctx):
+        now = datetime.datetime.now()
+        datei = open('bot-log.txt','a')
+        print(str(now) + "     Uptime Abfrage")
+        datei.write("\r\n" + str(now) + "     Uptime Abfrage")
+        datei.close()
+        os.system("uptime | tee temp.txt")
+        temp = open('temp.txt')
+        print(temp)
+        await ctx.send(temp.readline())
+        datei.close()
+    
 client.run(TOKEN)
