@@ -114,7 +114,10 @@ async def serverbackup(ctx):
     await ctx.send("Server Backup wurde auf dem USB-Stick erstellt.")
     datei.close()
 
-@client.command() 
+@client.command(
+    help="Zeigt die Server laufzeit seit dem letzten neustart an.",
+    brief="Server Laufzeit anzeigen."
+) 
 async def uptime(ctx):
         now = datetime.datetime.now()
         datei = open('bot-log.txt','a')
