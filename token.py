@@ -1,1 +1,2 @@
-Token = 'Token hier einfügen'
+def token():
+  TOKEN = 'Token hier einfügen'
