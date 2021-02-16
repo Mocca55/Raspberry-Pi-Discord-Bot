@@ -1,4 +1,5 @@
 # Import der Bibliotheken
+import token
 import discord
 import time
 from discord.ext import commands
@@ -17,7 +18,7 @@ datei.close()
 
 
 # Discord Token
-TOKEN = 'Token hier einfügen'
+#TOKEN = 'Token hier einfügen'
 
 #Command Prefix setzen hier -> -
 client = commands.Bot(command_prefix='-')
@@ -130,4 +131,4 @@ async def uptime(ctx):
         await ctx.send(temp.readline())
         datei.close()
     
-client.run(TOKEN)
+client.run(token)
