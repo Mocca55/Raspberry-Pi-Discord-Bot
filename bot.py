@@ -18,7 +18,7 @@ datei.close()
 
 
 # Discord Token
-#TOKEN = 'Token hier einfügen'
+TOKEN = 'Token hier einfügen'
 
 #Command Prefix setzen hier -> -
 client = commands.Bot(command_prefix='-')
@@ -48,7 +48,7 @@ async def rl(ctx):
     datei.write("\r\n" + str(now) + "     Wechsel auf -> spiel Rocket League")
     datei.close()
     
-
+    
 @client.command() 
 async def mc(ctx):
     await client.change_presence(activity=discord.Game(name="Minecraft-Server"))
@@ -57,6 +57,7 @@ async def mc(ctx):
     print(str(now) + "     Wechsel auf -> spielt Minecraft-Server")
     datei.write("\r\n" + str(now) + "     Wechsel auf -> spielt Minecraft-Server")
     datei.close()
+    
     
 @client.command() 
 async def bf(ctx):
@@ -68,6 +69,7 @@ async def bf(ctx):
     datei.write("\r\n" + str(now) + "     Wechsel auf -> spielt BF2")
     datei.close()
     
+    
 @client.command() 
 async def minecraft(ctx):
     await ctx.send('Minecraft Server XX.XX.XXX.XXX')
@@ -76,6 +78,7 @@ async def minecraft(ctx):
     print(str(now) + "     Mincraft Server Abfrage")
     datei.write("\r\n" + str(now) + "     Mincraft Server Abfrage")
     datei.close()
+    
     
 @client.command() 
 async def temp(ctx):
@@ -98,11 +101,15 @@ async def serverrestart(ctx):
     print(str(now) + "     Minecraft Server Restart")
     datei.write("\r\n" + str(now) + "     Minecraft Server Restart")
     await ctx.send("Einen moment der Minecraft Server wird jetzt neu gestartet.")
+    #Server per Script auf dem Pi beenden
     stop = os.system("~/minecraft/stop.sh")
+    #Server per Script auf dem Pi starten
     start = os.system("~/minecraft/start.sh")
+    #Pause bis der Server fertig gestartet ist
     sleep (47)
     await ctx.send("Minecraft Server ist neu gestartet und bereit.")
     datei.close()
+        
         
 @client.command() 
 async def serverbackup(ctx):
@@ -115,6 +122,7 @@ async def serverbackup(ctx):
     await ctx.send("Server Backup wurde auf dem USB-Stick erstellt.")
     datei.close()
 
+    
 @client.command(
     help="Zeigt die Server laufzeit seit dem letzten neustart an.",
     brief="Server Laufzeit anzeigen."
@@ -130,5 +138,6 @@ async def uptime(ctx):
         print(temp)
         await ctx.send(temp.readline())
         datei.close()
+    
     
 client.run(token)
